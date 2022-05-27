@@ -7,7 +7,8 @@ public class Gambler{
 	int numberOfwin = 0;
 	int numberOfLoss = 0;
 	double goal = 150;
-	
+	static int day = 20;
+
 	public static boolean winOrLoss() {
 		if(Math.random() > 0.5)
 			return true;
@@ -15,7 +16,8 @@ public class Gambler{
 			return false;
 	}
 	public void play() {
-			numberOfplay++;
+		numberOfplay++;
+		for (int i = 0;i<day;i++) {
 			if (winOrLoss()) {
 				stake += betPrice;
 				stake = stake/2;
@@ -31,6 +33,7 @@ public class Gambler{
 			else
 				play();
 		}
+	}
 	public void display () {
 		System.out.println("Number of time Game play is:" + numberOfplay);
 		System.out.println("Stake is:" + stake);
